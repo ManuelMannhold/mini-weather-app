@@ -105,7 +105,7 @@ function getTimezone(weather) {
   let timezone = weather.timezone;
   let timezoneDate = (timezone = new Date());
   let hours = timezoneDate.getHours();
-  let minutes = timezoneDate.getMinutes();
+  let minutes = timezoneDate.getMinutes().toString().padStart(2, "0");
   let tiemzoneTime = `${hours}:${minutes}`;
 
   return tiemzoneTime;
