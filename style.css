@@ -15,19 +15,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: rgb(235, 235, 235);
 }
 
 form {
-    width: 400px;
+    width: 20%;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     margin-bottom: 40px;
     gap: 10px;
-    position: absolute;
-    top: 40px;
 
     >input {
         padding: 10px;
@@ -45,8 +44,6 @@ input[type=submit] {
     font-weight: bold;
     cursor: pointer;
     background-color: seashell;
-    width: 40%;
-    align-self: center;
 
     &:hover {
         background-color: blanchedalmond;
@@ -55,12 +52,15 @@ input[type=submit] {
 
 .card {
     width: 400px;
-    height: 500px;
     background-color: lightblue;
     border-radius: 15px;
     padding: 15px;
     box-shadow: 0 0 10px black;
     position: relative;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 #city-name {
@@ -81,8 +81,17 @@ input[type=submit] {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    padding-top: 100px;
+    gap: 10px;
+    padding-top: 10px;
+
+    span {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
 }
 
 .temperature {
@@ -98,23 +107,99 @@ input[type=submit] {
     font-size: 64px;
     display: flex;
     justify-content: center;
+    line-height: 50px;
 }
 
 .sunset {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 24px;
     padding: 15px;
+    text-wrap: balance;
+    text-align: center;
 }
 
 .emoji-weather {
     display: flex;
     justify-content: center;
     font-size: 48px;
+}
+
+.night {
+    background-image: url('./assets/img/night-sky.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    transition: all 2ms ease-in-out;
+    box-shadow: 0 0 5px white;
+}
+
+.day {
+    background-image: url('./assets/img/heaven.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    transition: all 2ms ease-in-out;
+    text-shadow: 1px 1px 2px black;
+}
+
+.day-container {
+    background-image: linear-gradient(to bottom, #8793eb, #ffffff);
+}
+
+.night-container {
+    background-image: linear-gradient(to bottom, #1A1A40, #000000);
+}
+
+@media (max-height: 640px) {
+    form {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 600px;
+    }
+}
+
+@media (max-width: 630px) {
+    .card {
+        width: 300px;
+    }
+}
+
+@media (max-width: 420px) {
+    .card {
+        width: 300px;
+    }
+}
+
+@media (max-height: 560px) and (max-width: 630px) {
+    form {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 300px;
+        height: 340px;
+    }
+
+    #city-name {
+        font-size: 40px;
+    }
+
+    .temperature {
+        font-size: 32px;
+    }
+
+    .humidity {
+        font-size: 16px;
+    }
+
+    .sunset {
+        font-size: 20px;
+    }
 }
