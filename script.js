@@ -144,12 +144,12 @@ function setBackground(city) {
   let time = `${hours}:${minutes}`;
 
   if (time > getSunsetTime(city)) {
-    document.querySelector(".card").classList.add("night");
-    container.classList.add("night-container");
-    container.classList.remove("day-container");
-  } else {
     document.querySelector(".card").classList.add("day");
     container.classList.add("day-container");
     container.classList.remove("night-container");
+  } else {
+    document.querySelector(".card").classList.add("night");
+    container.classList.add("night-container");
+    container.classList.remove("day-container");
   }
 }

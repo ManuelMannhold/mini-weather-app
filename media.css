@@ -1,0 +1,54 @@
+@media (max-height: 640px) {
+    form {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 600px;
+    }
+}
+
+@media (max-width: 630px) {
+    .card {
+        width: 300px;
+    }
+}
+
+@media (max-width: 420px) {
+    .card {
+        width: 300px;
+    }
+}
+
+@media (max-height: 560px) and (max-width: 630px) {
+    form {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 300px;
+        height: 340px;
+    }
+
+    #city-name {
+        font-size: 40px;
+    }
+
+    .temperature {
+        font-size: 32px;
+    }
+
+    .humidity {
+        font-size: 16px;
+    }
+
+    .sunset {
+        font-size: 20px;
+    }
+}
+
+@media(max-height: 760px) {
+    .card {
+        height: unset;
+    }
+}

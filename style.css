@@ -52,6 +52,7 @@ input[type=submit] {
 
 .card {
     width: 400px;
+    height: 600px;
     background-color: lightblue;
     border-radius: 15px;
     padding: 15px;
@@ -129,7 +130,7 @@ input[type=submit] {
 }
 
 .night {
-    background-image: url('./assets/img/night-sky.jpg');
+    background-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.40) 100%), url('./assets/img/night-sky.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -139,7 +140,8 @@ input[type=submit] {
 }
 
 .day {
-    background-image: url('./assets/img/heaven.jpg');
+    background-image:
+    linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.40) 100%), url('./assets/img/heaven.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -156,51 +158,3 @@ input[type=submit] {
     background-image: linear-gradient(to bottom, #1A1A40, #000000);
 }
 
-@media (max-height: 640px) {
-    form {
-        flex-direction: column;
-    }
-
-    .card {
-        width: 600px;
-    }
-}
-
-@media (max-width: 630px) {
-    .card {
-        width: 300px;
-    }
-}
-
-@media (max-width: 420px) {
-    .card {
-        width: 300px;
-    }
-}
-
-@media (max-height: 560px) and (max-width: 630px) {
-    form {
-        flex-direction: column;
-    }
-
-    .card {
-        width: 300px;
-        height: 340px;
-    }
-
-    #city-name {
-        font-size: 40px;
-    }
-
-    .temperature {
-        font-size: 32px;
-    }
-
-    .humidity {
-        font-size: 16px;
-    }
-
-    .sunset {
-        font-size: 20px;
-    }
-}
